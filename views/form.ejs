@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-image: url(/images/background.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 0 30px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+
+      h3 {
+        margin: 0;
+      }
+
+      section {
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      form {
+        background: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 10px;
+      }
+
+      input {
+        width: 300px;
+        margin-top: 10px;
+        padding: 10px;
+        outline: none;
+        border-radius: 10px;
+        border: 1px solid grey;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      ul {
+        list-style: none;
+        padding: 10px;
+        margin: 0;
+        border: 1px solid grey;
+        border-radius: 10px;
+      }
+
+      li {
+        padding: 2px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      select {
+        outline: none;
+        padding: 10px;
+      }
+
+      form div {
+        display: flex;
+        flex-direction: column;
+      }
+
+      form .location {
+        margin-bottom: 20px;
+      }
+
+      .nav__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo__container {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        margin-right: 10px;
+      }
+
+      .logo__title {
+        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        font-size: x-large;
+        font-weight: 800;
+      }
+
+      .contact__container {
+        display: flex;
+        position: relative;
+      }
+
+      .find {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        font-size: larger;
+        color: white;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 30px;
+        margin-left: 20px;
+        cursor: pointer;
+      }
+
+      .contact {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        font-size: larger;
+        border: 1px solid white;
+        border-radius: 30px;
+        background-color: transparent;
+        color: white;
+        padding: 10px;
+        border-radius: 30px;
+        margin-left: 20px;
+        cursor: pointer;
+      }
+
+      .detail {
+        margin-bottom: 20px;
+      }
+
+      .contact__dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        margin-top: 10px;
+        right: 0;
+        padding: 20px 20px;
+        background-color: white;
+        border-radius: 10px;
+        border: 1px solid gray;
+      }
+
+      .find:hover {
+        color: black;
+        background-color: white;
+      }
+
+      .click {
+        background-color: transparent;
+        border: 1px solid black;
+        border-radius: 30px;
+        padding: 10px;
+        color: black;
+        margin-top: 20px;
+      }
+
+      .click:hover {
+        color: white;
+        background-color: black;
+        cursor: pointer;
+        border: 1px solid white;
+      }
+
+      .show {
+        background-color: transparent;
+        border: 1px solid black;
+        border-radius: 30px;
+        padding: 10px;
+        color: black;
+        margin-left: 20px;
+      }
+
+      .show:hover {
+        color: white;
+        background-color: black;
+        cursor: pointer;
+        border: 1px solid white;
+      }
+
+      .dropdown {
+        border: 1px solid grey;
+        border-radius: 10px;
+      }
+
+      .add {
+        margin-bottom: 10px;
+        margin-right: 40px;
+      }
+
+      .display {
+        display: none;
+      }
+
+      .home-btn {
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 30px;
+        color: white;
+        padding: 10px;
+        margin-left: 20px;
+        text-decoration: none;
+      }
+
+      .home-btn:hover {
+        color: black;
+        background-color: white;
+        cursor: pointer;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <nav class="nav__container">
+        <div class="logo__container">
+          <img src="/images/logo.png" alt="Website Logo" class="logo" />
+          <div class="logo__title">SLEEK</div>
+        </div>
+        <div class="contact__container">
+          <div class="find">Find Parking Space</div>
+          <div class="contact" id="contactLink">Contact us</div>
+          <div class="contact__dropdown" id="contactDropdown">
+            <div class="detail">Email: sleek@sleek.co</div>
+            <div class="detail">Phone: +234 90 7321 0998</div>
+            <div class="">Address: 14, Diamond Estate, Ikoyi</div>
+          </div>
+        </div>
+      </nav>
+    </nav>
+    <section>
+      <form action="" class="add">
+        <div
+          style="
+            border-bottom: 1px solid grey;
+            padding: 5px 0;
+            margin-bottom: 10px;
+          "
+        >
+          <div
+            style="
+              margin-bottom: 5px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-between;
+            "
+          >
+            <p>Available Spaces to park</p>
+            <button
+              class="show"
+              id="show"
+              onclick="showAvailableParkingSpaces(event)"
+            >
+              SHOW
+            </button>
+          </div>
+          <ul class="display" id="display__available">
+            <% cars.forEach((car) => { %> <% if (car.vehicle === "") { %>
+            <li><%- car.place %></li>
+            <% } %> <% }); %>
+          </ul>
+        </div>
+
+        <div>
+          <div
+            style="
+              margin-bottom: 5px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+            "
+          >
+            <p>Spaces that have already been taking</p>
+            <button
+              class="show"
+              id="show"
+              onclick="showTakenParkingSpaces(event)"
+            >
+              SHOW
+            </button>
+          </div>
+          <ul class="display" id="display__taken">
+            <li>
+              <h3>PLACE</h3>
+              <h3>VEHICLE TYPE</h3>
+            </li>
+            <% cars.forEach((car) => { %> <% if (car.vehicle !== "") { %>
+            <li>
+              <p><%- car.place %></p>
+              <p><%- car.vehicle %></p>
+            </li>
+            <% } %> <% }); %>
+          </ul>
+        </div>
+      </form>
+      <form action="/updatevehicle" method="post">
+        <div class="location">
+          <label for="vehicle__name">What is the name of your vehicle?</label>
+          <input
+            id="vehicle__name"
+            type="text"
+            name="vehicle"
+            placeholder="WHAT IS THE NAME OF YOUR VEHICLE"
+          />
+        </div>
+        <div class="">
+          <label for="parking__location" style="margin-bottom: 5px"
+            >Where do you want to park?</label
+          >
+          <input
+            id="parking__location"
+            type="text"
+            class=""
+            name="place"
+            placeholder="E.G LAGOS"
+          />
+        </div>
+        <button type="submit" class="click">SUBMIT</button>
+      </form>
+    </section>
+    <a href="/" class="home-btn">Go Home</a>
+    <script>
+      document
+        .getElementById("contactLink")
+        .addEventListener("click", function () {
+          let dropdown = document.getElementById("contactDropdown");
+          let contactButton = document.getElementById("contactLink");
+          contactButton.style.backgroundColor =
+            contactButton.style.backgroundColor === "white"
+              ? "transparent"
+              : "white";
+
+          contactButton.style.color =
+            contactButton.style.color === "black" ? "white" : "black";
+
+          dropdown.style.display =
+            dropdown.style.display === "block" ? "none" : "block";
+        });
+
+      function preventDefaultClick(event) {
+        console.log("button has been clicked");
+      }
+
+      function showAvailableParkingSpaces(e) {
+        e.preventDefault();
+        let display = document.getElementById("display__available");
+        display.style.display =
+          display.style.display === "none" ? "block" : "none";
+        if (display.style.display === "block") {
+          document.getElementById("show").innerHTML = "HIDE";
+        } else {
+          document.getElementById("show").innerHTML = "SHOW";
+        }
+      }
+      function showTakenParkingSpaces(e) {
+        e.preventDefault();
+        let display = document.getElementById("display__taken");
+        display.style.display =
+          display.style.display === "none" ? "block" : "none";
+        if (display.style.display === "block") {
+          document.getElementById("show").innerHTML = "HIDE";
+        } else {
+          document.getElementById("show").innerHTML = "SHOW";
+        }
+      }
+    </script>
+  </body>
+</html>
